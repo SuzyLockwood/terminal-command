@@ -17,9 +17,17 @@ module.exports.ls = () => {
 };
 
 module.exports.touch = () => {
-  // your code here
+  fs.writeFile('hello-world.txt', 'Hello to this great world', 'utf8', function(
+    err
+  ) {
+    if (err) throw err;
+    console.log('File Created!');
+  });
 };
 
 module.exports.mkdir = () => {
-  // your code here
+  fs.mkdir('directory', function(err) {
+    if (err) throw err;
+    console.log('Directory Created!');
+  });
 };
